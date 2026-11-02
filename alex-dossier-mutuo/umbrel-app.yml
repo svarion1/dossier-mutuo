@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: alex-dossier-mutuo
+name: Dossier mutuo
+tagline: Banche, documenti e costi per il mutuo SAL di Casa Buretta
+icon: https://raw.githubusercontent.com/svarion1/dossier-mutuo/main/public/icon.svg
+category: files
+version: "1.1.0"
+port: 8790
+description: >-
+  Gestione della richiesta di mutuo a stato avanzamento lavori: banche contattate,
+  domande e offerte, portafoglio documenti con caricamento file, costi, pagamenti e passi.
+  Dati e file restano sull'Umbrel.
+developer: Alessandro Scisci
+website: https://github.com/svarion1/dossier-mutuo
+submitter: Alessandro Scisci
+submission: https://github.com/svarion1/dossier-mutuo
+repo: https://github.com/svarion1/dossier-mutuo
+support: https://github.com/svarion1/dossier-mutuo/issues
+gallery: []
+releaseNotes: >-
+  Archivio file sul server, salvataggio automatico in JSON con backup.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

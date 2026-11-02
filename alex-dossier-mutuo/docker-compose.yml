@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # Formato: <app-id>_<servizio>_1
+      APP_HOST: alex-dossier-mutuo_web_1
+      APP_PORT: 8790
+
+  web:
+    image: ghcr.io/svarion1/dossier-mutuo:latest
+    user: "1000:1000"
+    init: true
+    restart: on-failure
+    environment:
+      TZ: Europe/Rome
+      DATA_DIR: /data
+      MAX_UPLOAD_MB: "200"
+    volumes:
+      - ${APP_DATA_DIR}/data:/data

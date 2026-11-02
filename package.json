@@ -1,0 +1,9 @@
+{
+  "name": "dossier-mutuo-buretta",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Dossier mutuo SAL: banche, documenti, costi e passi, con archivio file sul server",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
