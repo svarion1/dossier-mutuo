@@ -1,17 +1,18 @@
+version: "3.7"
+
 services:
-  dossier:
-    build: .
-    image: dossier-mutuo-buretta:latest
-    container_name: dossier-mutuo
-    restart: unless-stopped
-    # uid/gid 1000 = utente "umbrel": i file restano tuoi e visibili nell'app File
-    user: "1000:1000"
-    ports:
-      - "${DOSSIER_PORT:-8790}:8790"
+  app_proxy:
     environment:
-      - TZ=Europe/Rome
-      - DOSSIER_PASSWORD=${DOSSIER_PASSWORD:-}
-      - MAX_UPLOAD_MB=${MAX_UPLOAD_MB:-200}
+      APP_HOST: alex-dossier-mutuo_dossier_1
+      APP_PORT: 8790
+
+  dossier:
+    image: svarion1/dossier-mutuo:1.0.0
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      TZ: Europe/Rome
+      MAX_UPLOAD_MB: 200
+      DOSSIER_PASSWORD: ""
     volumes:
-      # Cartella dati sul disco. Su Umbrel: /home/umbrel/umbrel/home/Dossier-mutuo (visibile nell'app File)
-      - ${DATA_PATH:-./data}:/data
+      - ${APP_DATA_DIR}/data:/data
